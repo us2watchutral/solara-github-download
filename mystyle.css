@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+body {
+    min-height: 100vh;
+    background: url("https://wallpapercave.com/wp/wp5195301.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left; 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100%;
+}
+
+
+
+.logo {
+    font-size: 2rem;
+    color: rgba(229, 250, 253, 0.788);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.Navbar a {
+    font-size: 1.15rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 2rem;
+
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    font-size: 2.4rem;
+    position: absolute;
+    right: 4%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+
+#check:checked~.icons #menu-icon {
+    display: none;
+
+}
+
+#check:checked~.icons #close-icon {
+    display: block;
+
+}
+
+.icons #close-icon {
+    display: none;
+}
+    .Navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(60px);
+        transition: 1s ease;
+        overflow: hidden;
+    }
+
+    #check:checked~.Navbar {
+        height: 17.7rem;
+    }
+
+    .Navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: 1s ease;
+    
+    }
+
+    #check:checked~.Navbar a {
+        transform: translateY(0px);
+
+    }
+
+}
